@@ -1,0 +1,113 @@
+*{box-sizing: border-box;}
+        .slide,.slide2{
+            display: none;
+        }
+        .text1{
+            position: absolute;
+            top: 30px;
+            left:5%;
+            color:aquamarine;
+            font-size: 8vw;
+            font-weight: bold;
+            font-style: italic;
+            
+        }
+        .text2{
+            position: absolute;
+            top: 350px;
+            left:1%;
+            color:blueviolet;
+            font-size: 6.5vw;
+            font-weight: bold;
+            font-style: italic;
+        }
+        .t2{font-size: 6vw;color: white;}
+        .t3{color:rgb(20, 242, 242)}
+        .t4{color: rgb(134, 244, 83);}
+        .t5{font-size: 6vw;color:gold}
+        .slidecontanair{
+            position: relative;
+        }
+        .animate,.slide2 {
+            animation-name: chengeOpacity;
+            animation-duration: 5s;
+        }
+        @keyframes chengeOpacity{
+            from{opacity: 0.3;}
+            to{opacity: 1;}
+        }
+        .help{
+            margin-top: -16px;
+            background: linear-gradient(to bottom, #a18cd1, #fbc2eb);
+            border-radius: 10px;
+        }
+        .help h1 {
+           color: white;
+           text-align: center;
+          }
+
+          .help .cont {
+             background: linear-gradient(to bottom, #e0c3fc, #8ec5fc);
+             max-width:40%;
+             margin-left: 32%;
+             border-radius: 5px;
+             }
+
+          .help h3 {
+            color: white;
+           }
+
+           .slide2{
+            position: relative;
+            background: linear-gradient(to bottom right, yellow,blue);
+            width: 80%;
+            height: 100px;
+            margin-left: 10%;
+            border-radius: 40%;
+           }
+           .Slide2Text{
+              position: absolute;
+              top:35px;
+              left:17.5%;
+              color:white;
+              font-size: 3vw;
+              font-weight: bold;
+              font-style: italic;
+           }
+           figcaption{
+             margin-left: 10%;
+           }
+           .contain{
+            position: relative;
+           }
+           .col{
+            width: 40%;
+           }
+           .col1,.col3,.col5{
+            float:left;
+            clear: left;
+            margin-left: 9%;
+           }
+           .col2,.col4,.col6{
+            float:right;
+            margin-right: 6%;
+           }
+           .col7{
+            width: 100%;
+            height: 200px;
+            border-radius: 15px;
+            background-color: rgb(138, 117, 117);
+            clear: both;
+           }
+           .col7 h1{color: white;text-align: center; margin-top: -5px;}
+           .col7 a{text-decoration: none;color: gold;font-size: larger;}
+           #footerLeft{
+            margin-left: 15%;
+             float: left;
+             width: 40%;
+           }
+           #footerRight{
+            padding-left: 5%;
+            float: right;
+            width: 40%;
+           }

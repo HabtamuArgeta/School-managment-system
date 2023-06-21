@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Home</title>
+        <link rel="icon" href="../IMAGES/logo.jpg">
+        <link rel="stylesheet" href="../CSS/index.css">
+    </head>
+    <body >
+        <header>
+            <nav id="header-nav">
+              <img src="../IMAGES/Fikadu.webp" width="100" height="100">
+               <a  title="Main home" id="home" class="HeaderShow" href="welcome.html" onclick="chengeTitl('Home')" target="myfram">Home</a>
+               <a title="Insert Data" class="HeaderShow" href="takeExam.html" onclick="chengeTitl('Insert')" target="myfram">Insert</a>
+               <a title="Update Data" class="HeaderShow" href="AboutUs.html" onclick="chengeTitl('Update')" target="myfram">Update</a>
+               <a title="Display Data" class="HeaderShow" href="takeExam.html" onclick="chengeTitl('Display')" target="myfram">Display</a>
+               <a title="Delete Data" class="HeaderShow" href="AboutUs.html" onclick="chengeTitl('Delete')" target="myfram">Delete</a>
+               <div id="bar" onclick="showBars()"> &#x2261;</div>
+            </nav>
+          </header>
+          <aside id="rightAside">
+               <a id="close" onclick="closeMe()">&#10007;</a>
+               <a class="Asideshow" href="welcome.html" onclick="chengeTitl('Home')" target="myfram">Home</a>
+               <a  class="Asideshow" href="takeExam.html" onclick="chengeTitl('Insert')" target="myfram">Insert</a>
+               <a  class="Asideshow" href="AboutUs.html" onclick="chengeTitl('Update')" target="myfram">Update</a>
+               <a  class="Asideshow" href="takeExam.html" onclick="chengeTitl('Display')" target="myfram">Display</a>
+               <a  class="Asideshow" href="AboutUs.html" onclick="chengeTitl('Delete')" target="myfram">Delete</a>
+          </aside>
+          <iframe id="myfram" name="myfram"></iframe> 
+          <script> 
+          //this is used to click an anchor whose id =home when the page loads
+              window.addEventListener("load",function(){
+                let homeLink = document.getElementById('home');
+                homeLink.click();
+              });  
+          </script>
+          <script src="../JS/responsive.js"></script>
+    </body>
+</html>
