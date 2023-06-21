@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Insert</title>
+      <link rel="stylesheet" href="../CSS/managePageLayout.css">
+   </head>
+   <body>
+      <main id="mainClass">  
+         <fieldset id="fieldset">
+            <legend id="Legend"></legend>
+            <form class="myForm" method="POST" action="../PHP/server.php" target="hide_the_response_from_php">
+               <p class="error">*All fields except answer are required</p>
+                <p>Teacher_id : <br><input type="number" class="clear" name="teacher_id"></p>
+                <p>Teacher_name : <br><input type="text" class="clear" name="teacher_name"></p>
+                <p>Phone_number : <br><input type="text" class="clear" name="phone_number"></p>
+                <p>Age : <br><input type="number" class="clear" name="age"></p>
+                <p>Teacher_address : <br><input type="text" class="clear" name="teacher_address"></p>
+                <input type="submit" value="Insert" name="Insert">     
+            </form>
+         </fieldset>
+      </main>
+     
+      <iframe id="myFrame" name="hide_the_response_from_php" style="display: none;"></iframe>
+
+         <aside id="left_side_bar">
+           <a onclick="showForm('teacher',1)">To teacher</a>
+           <a onclick="showForm('student',2)">To student</a>
+           <a onclick="showForm('course',3)">To course</a>
+        </aside>
+
+        <script src="../JS/InsertPageManegr.js"> </script>
+       
+        
+   </body>
+</html>

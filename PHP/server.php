@@ -1,15 +1,15 @@
 <?php
 // Connect to database
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "school_db";
+$dbName = "school_db";
+$hostName = "localhost";
+$userName="root";
+$password="";
 try {
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn = new PDO("mysql:host=$hostName;dbname=$dbName", $userName, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
 
   // To Add teacher
- if (isset($_POST['submit_me'])) {
+ if (isset($_POST['Insert'])) {
   $teacher_id = $_POST['teacher_id'];
   $teacher_name = $_POST['teacher_name'];
   $phone_number = $_POST['phone_number'];
