@@ -29,7 +29,7 @@
           overflow: auto;
           
     }
-    .myForm,#fieldset{
+    .myForm,#fieldset,.SearchForm{
         display: none;
     } 
     .error{color: red;}

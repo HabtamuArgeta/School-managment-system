@@ -23,12 +23,12 @@ try {
 
 
   // php to make updates
-if(isset($_POST['submit_updates'])){
+if(isset($_POST['UpdateTeacher'])){
   $teacher_id = $_POST['teacher_id'];
-  $new_teacher_name = $_POST['new_teacher_name'];
-  $new_phone_number = $_POST['new_phone_number'];
-  $new_age= $_POST['new_age'];
-  $new_teacher_address= $_POST['new_teacher_address'];
+  $new_teacher_name = $_POST['teacher_name'];
+  $new_phone_number = $_POST['phone_number'];
+  $new_age= $_POST['age'];
+  $new_teacher_address= $_POST['teacher_address'];
 //   $sql = "UPDATE teacher SET teacher_name='$new_teacher_name', phone_number='$new_phone_number', age='$new_age', teacher_address='$new_teacher_address' WHERE teacher_id='$teacher_id'";
     $querry="UPDATE teacher SET teacher_id=:teacher_id,teacher_name=:teacher_name,phone_number=:phone_number,age=:age,teacher_address=:teacher_address WHERE teacher_id=:teacher_id";
     $stmt=$conn->prepare($querry);
@@ -42,7 +42,7 @@ if(isset($_POST['submit_updates'])){
 
 
 // php for search form in Update
- if (isset($_POST['searched_submit'])) {
+ if (isset($_POST['searcheForTeacher'])) {
      $teacher_id = $_POST['teacher_id'];
     $Querry="SELECT teacher_id, teacher_name, phone_number, age, teacher_address FROM teacher WHERE  teacher_id=$teacher_id";
     $stmt=$conn->prepare($Querry);
@@ -76,30 +76,56 @@ if(isset($_POST['submit_updates'])){
 }
 
 //Display intered data  
-  if (isset($_POST['submit_hidden_form'])) {
+  if (isset($_POST['displayTeacher'])) {
       $Querry="SELECT teacher_id, teacher_name, phone_number, age, teacher_address FROM teacher";
       $stmt=$conn->prepare($Querry);
       $stmt->execute();
       $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
       if(count($result)>0){
-        echo "<b>2015 </b>".strtoupper( "<b>$Exit_model_for_takeExam</b>"). " <b>EXAM QUESTIONS</b>";
+        echo "<b>HERE ARE RECORD OF TEACHERS ADDED </b><br><br>";
       }else{
         echo "<b>TEACHER IS NOT ADDED YET </b>";
       }
-      foreach($result as $row){
-          $col1=$row["teacher_id"];
-          $col2=$row["teacher_name"];
-          $col3=$row["phone_number"];
-          $col4=$row["age"];
-          $col5=$row["teacher_address"];
+  echo "<table style='border-collapse: collapse;width:70%;'>";
+  foreach ($result as $row) {
+     $col1 = $row["teacher_id"];
+     $col2 = $row["teacher_name"];
+     $col3 = $row["phone_number"];
+     $col4 = $row["age"];
+     $col5 = $row["teacher_address"];
 
-          echo "teacher_id -> $col1 <br>";
-          echo "teacher_name -> $col2 <br>";
-          echo "phone_number -> $col3 <br>";
-          echo "age -> $col4 <br>";
-          echo "teacher_address -> $col5 <br>";
-          echo "<br>";
-      }  
+     echo "<tr>";
+     echo "<td colspan='2' style='border: 1px solid black;text-align:center'><b>One teacher Info</b> </td>";
+     echo "</tr>";
+
+     echo "<tr>";
+     echo "<td style='border: 1px solid black;'>Teacher_id</td>";
+     echo "<td style='border: 1px solid black;'>$col1</td>";
+     echo "</tr>";
+
+     echo "<tr>";
+     echo "<td style='border: 1px solid black;'>Teacher_name</td>";
+     echo "<td style='border: 1px solid black;'>$col2</td>";
+     echo "</tr>";
+
+     echo "<tr>";
+     echo "<td style='border: 1px solid black;'>Phone_number</td>";
+     echo "<td style='border: 1px solid black;'>$col3</td>";
+     echo "</tr>";
+
+     echo "<tr>";
+     echo "<td style='border: 1px solid black;'>Age</td>";
+     echo "<td style='border: 1px solid black;'>$col4</td>";
+     echo "</tr>";
+
+     echo "<tr>";
+     echo "<td style='border: 1px solid black;'>Teacher_address</td>";
+     echo "<td style='border: 1px solid black;'>$col5</td>";
+     echo "</tr>";
+     echo "<br>";
+   }
+  echo "</table>";
+
 }
 }catch (PDOException $e) {
   echo "Error while connecting to database: " . $e->getMessage();

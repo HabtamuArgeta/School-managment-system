@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+    <link rel="stylesheet" href="../CSS/managePageLayout.css">
+    <style>
+        table ,tr,td{border: 2px solid black;}
+
+    </style>
+
+</head>
+<body>
+    <main style="display:none">
+        <form id="teacherForm" method="POST" action="../PHP/server.php" target="mainClass">
+           <input text="submit" name="displayTeacher" value="submit">
+        </form> 
+      </main>
+     <iframe style="border-width: 0;" name="mainClass" id="mainClass"></iframe>
+     <aside id="left_side_bar">
+        <a onclick="display(1)"> Teacher</a>
+        <a onclick="display(2)">student</a>
+        <a onclick="display(3)">course</a>
+        <a onclick="display(4)">Administration</a>
+        <a onclick="display(5)">Class</a>
+        <a onclick="display(6)">school</a>
+        <a onclick="display(7)">Registration</a>
+     </aside>
+     <script>
+       function display(x) {
+         switch(x){
+            case 1 :
+                document.getElementById('teacherForm').submit();
+              break;
+            case 2 :
+              break;
+              case 3 :
+              break;
+            case 4 :
+              break;
+              case 5 :
+              break;
+            case 6 :
+              break;
+              case 7 :
+              break;
+         }
+       }
+     </script>
+</body>
+</html>
