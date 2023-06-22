@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up</title>
+    <link rel="icon" href="../IMAGES/logo.jpg">
+    <link  rel="stylesheet" href="../CSS/CssForlogin.css">
+</head>
+<body>
+  <center>
+   <fieldset id="feildset">
+    <legend>sign up</legend>
+    <form id="signUpform" method="post" action="../PHP/loginServer.php" target="hide_me_frame">
+      <p>
+         User Name :<br>
+        <input type="text" id="username" name="regUsername" >
+      <p>
+      <p>
+           Password :<br>
+          <input type="password" id="regPassword" name="regPassword" >
+      </p>
+       <p>
+          Confirm :<br>
+          <input type="password" id="confirmedPass" name="confirmedPass" >
+      </p>
+      <div id="error"></div>
+       <p><input type="submit" value="sign up" id="signUpSubmit" name="signUpSubmit"></p>
+      <div> Already have account?<a href="index.html">login</a></div>
+    </form>
+    <iframe id="hide_me_frame" name="hide_me_frame" ></iframe>
+  </fieldset>
+ </center>
+    <script src="../JS/loginAndSignUp.js"></script>
+</body>
+</html>

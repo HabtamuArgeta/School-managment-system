@@ -1,0 +1,17 @@
+*{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    box-sizing: border-box;
+}
+#hide_me_frame{
+    display: none;
+}
+#error{
+    color: red;
+}
+#feildset{
+    width: 30%;
+}
+form a{
+    color: blue;
+    text-decoration: none;
+}

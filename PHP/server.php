@@ -9,7 +9,7 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
 
   // To Add teacher
- if (isset($_POST['Insert'])) {
+ if (isset($_POST['addTeacher'])) {
   $teacher_id = $_POST['teacher_id'];
   $teacher_name = $_POST['teacher_name'];
   $phone_number = $_POST['phone_number'];

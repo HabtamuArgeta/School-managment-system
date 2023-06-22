@@ -1,40 +1,32 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <title>Home</title>
-        <link rel="icon" href="../IMAGES/logo.jpg">
-        <link rel="stylesheet" href="../CSS/index.css">
-    </head>
-    <body >
-        <header>
-            <nav id="header-nav">
-              <img src="../IMAGES/Fikadu.webp" width="100" height="100">
-               <a  title="Main home" id="home" class="HeaderShow" href="welcome.html" onclick="chengeTitl('Home')" target="myfram">Home</a>
-               <a title="Insert Data" class="HeaderShow" href="Insert.html" onclick="chengeTitl('Add')" target="myfram">Add</a>
-               <a title="Update Data" class="HeaderShow" href="Update.html" onclick="chengeTitl('Update')" target="myfram">Update</a>
-               <a title="Display Data" class="HeaderShow" href="Diplay.html" onclick="chengeTitl('Display')" target="myfram">Display</a>
-               <a title="Delete Data" class="HeaderShow" href="delete.htm" onclick="chengeTitl('Delete')" target="myfram">Delete</a>
-               <div id="bar" onclick="showBars()"> &#x2261;</div>
-            </nav>
-          </header>
-          <aside id="rightAside">
-               <a id="close" onclick="closeMe()">&#10007;</a>
-               <a class="Asideshow" href="welcome.html" onclick="chengeTitl('Home')" target="myfram">Home</a>
-               <a  class="Asideshow" href="Insert.html" onclick="chengeTitl('Insert')" target="myfram">Insert</a>
-               <a  class="Asideshow" href="Update.html" onclick="chengeTitl('Update')" target="myfram">Update</a>
-               <a  class="Asideshow" href="Diplay.html" onclick="chengeTitl('Display')" target="myfram">Display</a>
-               <a  class="Asideshow" href="delete.htm" onclick="chengeTitl('Delete')" target="myfram">Delete</a>
-          </aside>
-          <iframe id="myfram" name="myfram"></iframe> 
-          <script> 
-          //this is used to click an anchor whose id =home when the page loads
-              window.addEventListener("load",function(){
-                let homeLink = document.getElementById('home');
-                homeLink.click();
-              });  
-          </script>
-          <script src="../JS/responsive.js"></script>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link  rel="stylesheet" href="../CSS/CssForlogin.css">
+</head>
+<body>
+  <center>
+   <fieldset id="feildset">
+     <legend>login </legend>
+    <form id="loginForm" method="post" action="../PHP/loginServer.php" target="hide_me_frame">
+        <p>
+           User Name :<br>
+          <input type="text" id="username" name="Username">
+        <p>
+        <p>
+           Password :<br>
+           <input type="password" id="password" name="Password">
+        </p>
+        <div id="error"></div>
+       <p><input type="submit" value="login" id="loginSubmit" name="loginSubmit"></p>
+      <div>Dont't have an account?<a href="signUp.html">sign up</a></div>
+    </form>
+    <iframe id="hide_me_frame" name="hide_me_frame" ></iframe>
+   </fieldset>
+  </center>
+    <script src="../JS/loginAndSignUp.js"></script>
+</body>
 </html>
