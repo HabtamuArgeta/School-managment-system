@@ -53,5 +53,9 @@ for(let i=0;i<textField.length;i++){
   }
   function handleSuccessUpdateResponse(response){
     document.getElementById('success_updates').innerHTML =response ; 
+    
 
+  }
+  function handelresponseInDelete(response){
+    document.getElementById('success_Delete').innerHTML =response ;
   }

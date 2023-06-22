@@ -1,43 +1,47 @@
-
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Insert</title>
-      <link rel="stylesheet" href="../CSS/managePageLayout.css">
-   </head>
-   <body>
-      <main id="mainClass">  
-         <fieldset id="fieldset">
-            <legend id="Legend"></legend>
-            <form class="myForm" method="POST" action="../PHP/server.php" target="hide_the_response_from_php">
-               <p class="error">*All fields except answer are required</p>
-                <p>Teacher_id : <br><input type="number" class="clear" name="teacher_id"></p>
-                <p>Teacher_name : <br><input type="text" class="clear" name="teacher_name"></p>
-                <p>Phone_number : <br><input type="text" class="clear" name="phone_number"></p>
-                <p>Age : <br><input type="number" class="clear" name="age"></p>
-                <p>Teacher_address : <br><input type="text" class="clear" name="teacher_address"></p>
-                <input type="submit" value="Insert" name="Insert">     
-            </form>
-         </fieldset>
-      </main>
-     
-      <iframe id="myFrame" name="hide_the_response_from_php" style="display: none;"></iframe>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete</title>
+    <link rel="stylesheet" href="../CSS/managePageLayout.css">
+</head>
+<body>
+    <main id="mainClass">  
+        <fieldset id="fieldset">
+           <legend id="Legend"></legend>
+           <form class="SearchForm" method="POST" action="../PHP/server.php" target="display_to_me">
+               <div style="float:right;">
+                  <input  type="number" name="teacher_id" placeholder="Enter teacher_id">
+                  <input  type="submit" value="search" name="searcheForTeacher">
+                  <div id="error" style="color:red"></div>
+               </div>
+           </form>
 
-         <aside id="left_side_bar">
-           <a onclick="showForm('teacher',1)"> Teacher</a>
-           <a onclick="showForm('student',2)">student</a>
-           <a onclick="showForm('course',3)">course</a>
-           <a onclick="showForm('administration',4)">Administration</a>
-           <a onclick="showForm('class',5)">Class</a>
-           <a onclick="showForm('school',6)">school</a>
-           <a onclick="showForm('registration',6)">Registration</a>
-        </aside>
+           <form class="myForm" method="POST" action="../PHP/server.php" target="hide_the_response_from_php">
+            <p class="error">*All fields except answer are required</p>
+             <p>Teacher_id : <br><input type="number" class="clear" id="teacher_id" name="teacher_id"></p>
+             <p>Teacher_name : <br><input type="text" class="clear" id="teacher_name" name="teacher_name"></p>
+             <p>Phone_number : <br><input type="text" class="clear" id="phone_number" name="phone_number"></p>
+             <p>Age : <br><input type="number" class="clear" id="age" name="age"></p>
+             <p>Teacher_address : <br><input type="text" class="clear" id="teacher_address" name="teacher_address"></p>
+             <input type="submit" value="Delete" name="DeleteTeacher">    
+         </form>
+         <div id="success_Delete"></div>  
+        </fieldset>
+     </main>
+     <iframe id="myFrame" name="hide_the_response_from_php" style="display: none;"></iframe>
+      <iframe name="display_to_me" style="display: none;"></iframe>
+      <aside id="left_side_bar">
+        <a onclick="showForm('teacher',1)"> Teacher</a>
+        <a onclick="showForm('student',2)">student</a>
+        <a onclick="showForm('course',3)">course</a>
+        <a onclick="showForm('administration',4)">Administration</a>
+        <a onclick="showForm('class',5)">Class</a>
+        <a onclick="showForm('school',6)">school</a>
+        <a onclick="showForm('registration',7)">Registration</a>
+     </aside>
 
-        <script src="../JS/InsertPageManegr.js"> </script>
-       
-        
-   </body>
+      <script src="../JS/UpdatePageManager.js"> </script>
+</body>
 </html>

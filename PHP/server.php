@@ -64,13 +64,12 @@ if(isset($_POST['UpdateTeacher'])){
 }
 
   // php for delete
-  if(isset($_POST["DeleteData"])){
+  if(isset($_POST["DeleteTeacher"])){
    $teacher_id = $_POST['teacher_id'];
     $querry="DELETE FROM teacher WHERE teacher_id=:teacher_id";
     $stmt=$conn->prepare($querry);
     $stmt->bindParam(':teacher_id',$teacher_id);
-    $stmt->execute();
-    if($stmt->rowCount()>0){
+    if($stmt->execute()){
       echo '<script>window.parent.handelresponseInDelete("one row is affected");</script>';
     }
 }
