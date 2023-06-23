@@ -18,14 +18,14 @@
  } 
  #left_side_bar{
     width:15%;
-    height: 456px;
+    height: 490px;
     overflow: auto;
     background-color: rgb(182, 187, 187,0.5);
     }
     #mainClass{
           float: right;
           width:84%;
-          height: 456px;
+          height: 490px;
           overflow: auto;
           
     }

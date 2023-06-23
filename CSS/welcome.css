@@ -38,7 +38,7 @@
         }
         .help{
             margin-top: -16px;
-            background: linear-gradient(to bottom, #a18cd1, #fbc2eb);
+            background: linear-gradient(to bottom, #ac967e, #9fa4ee,rgb(121, 249, 121));  
             border-radius: 10px;
         }
         .help h1 {

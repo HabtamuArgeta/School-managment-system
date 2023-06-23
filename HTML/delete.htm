@@ -10,18 +10,18 @@
     <main id="mainClass">  
         <fieldset id="fieldset">
            <legend id="Legend"></legend>
-            <!-- search Form for the 'registration' table -->
+            <!-- search Form for the 'teacher' table -->
            <form class="SearchForm" method="POST" action="../PHP/server.php" target="display_to_me">
                <div style="float:right;">
                   <input  type="number" name="teacher_id" placeholder="Enter teacher_id">
                   <input  type="submit" value="search" name="searcheForTeacher">
-                  <div id="error" style="color:red"></div>
+                 
                </div>
            </form>
-             <!-- Update Form for the 'registration' table -->
+             <!-- Update Form for the 'teacher' table -->
            <form class="myForm" method="POST" action="../PHP/server.php" target="hide_the_response_from_php">
-            <p class="error">*All fields except answer are required</p>
-             <p>Teacher_id : <br><input type="number" class="clear" id="teacher_id" name="teacher_id"></p>
+            <p class="error">*It is advisable to fill all field</p>
+            <p>Teacher_id : <br><input type="number" class="clear" id="teacher_id" name="teacher_id"></p>
              <p>Teacher_name : <br><input type="text" class="clear" id="teacher_name" name="teacher_name"></p>
              <p>Phone_number : <br><input type="text" class="clear" id="phone_number" name="phone_number"></p>
              <p>Age : <br><input type="number" class="clear" id="age" name="age"></p>
@@ -34,18 +34,18 @@
     <div style="float:right;">
       <input type="number" name="student_id" placeholder="Enter student_id">
       <input type="submit" value="Search" name="searchForStudent">
-      <div id="error" style="color:red"></div>
+      
     </div>
   </form>
   
   <!-- delete form for the 'student' table -->
   <form class="myForm" method="POST" action="../PHP/server.php" target="hide_the_response_from_php">
-    <p class="error">*All fields except answer are required</p>
+    <p class="error">*It is advisable to fill all field</p>
     <p>Student ID: <br><input type="number" class="clear" id="student_id" name="student_id"></p>
     <p>Student Name: <br><input type="text" class="clear" id="student_name" name="student_name"></p>
     <p>Student Address: <br><input type="text" class="clear" id="student_address" name="student_address"></p>
     <p>Student Email: <br><input type="text" class="clear" id="student_email" name="student_email"></p>
-    <p>Phone Number: <br><input type="text" class="clear" id="phone_number" name="phone_number"></p>
+    <p>Phone Number: <br><input type="text" class="clear" id="phone_number1" name="phone_number"></p>
     <input type="submit" value="delete" name="deleteStudent">
   </form>
 
@@ -54,17 +54,17 @@
     <div style="float:right;">
       <input type="number" name="course_id" placeholder="Enter course_id">
       <input type="submit" value="Search" name="searchForCourse">
-      <div id="error" style="color:red"></div>
+ 
     </div>
   </form>
   
   <!-- delete form for the 'course' table -->
   <form class="myForm" method="POST" action="../PHP/server.php" target="hide_the_response_from_php">
-    <p class="error">*All fields except answer are required</p>
+    <p class="error">*It is advisable to fill all field</p>
     <p>Course ID: <br><input type="number" class="clear" id="course_id" name="course_id"></p>
     <p>Course Name: <br><input type="text" class="clear" id="course_name" name="course_name"></p>
-    <p>Student ID: <br><input type="number" class="clear" id="student_id" name="student_id"></p>
-    <p>Class ID: <br><input type="number" class="clear" id="class_id" name="class_id"></p>
+    <p>Student ID: <br><input type="number" class="clear" id="student_id4" name="student_id"></p>
+    <p>Class ID: <br><input type="number" class="clear" id="class_id2" name="class_id"></p>
     <p>Course Type: <br><input type="text" class="clear" id="course_type" name="course_type"></p>
     <input type="submit" value="Delete" name="DeleteCourse">
   </form>
@@ -73,13 +73,13 @@
     <div style="float:right;">
       <input type="number" name="admin_id" placeholder="Enter admin_id">
       <input type="submit" value="Search" name="searchForAdministration">
-      <div id="error" style="color:red"></div>
+     
     </div>
   </form>
   
   <!-- Delete Form for the 'administration' table -->
   <form class="myForm" method="POST" action="../PHP/server.php" target="hide_the_response_from_php">
-    <p class="error">*All fields except answer are required</p>
+    <p class="error">*It is advisable to fill all field</p>
     <p>Admin ID: <br><input type="number" class="clear" id="admin_id" name="admin_id"></p>
     <p>Admin Name: <br><input type="text" class="clear" id="admin_name" name="admin_name"></p>
     <p>Admin Address: <br><input type="text" class="clear" id="admin_address" name="admin_address"></p>
@@ -90,16 +90,16 @@
     <div style="float:right;">
       <input type="number" name="class_id" placeholder="Enter class_id">
       <input type="submit" value="Search" name="searchForClass">
-      <div id="error" style="color:red"></div>
+ 
     </div>
   </form>
   
   <!-- Delete Form for the 'class' table -->
   <form class="myForm" method="POST" action="../PHP/server.php" target="hide_the_response_from_php">
-    <p class="error">*All fields except answer are required</p>
+    <p class="error">*It is advisable to fill all field</p>
     <p>Class ID: <br><input type="number" class="clear" id="class_id" name="class_id"></p>
     <p>Class Type: <br><input type="text" class="clear" id="class_type" name="class_type"></p>
-    <p>Student ID: <br><input type="number" class="clear" id="student_id" name="student_id"></p>
+    <p>Student ID: <br><input type="number" class="clear" id="student_id1" name="student_id"></p>
     <p>Class Name: <br><input type="text" class="clear" id="class_name" name="class_name"></p>
     <input type="submit" value="Delete" name="DeleteClass">
   </form>
@@ -108,13 +108,13 @@
     <div style="float:right;">
       <input type="number" name="school_ID" placeholder="Enter school_ID">
       <input type="submit" value="Search" name="searchForSchool">
-      <div id="error" style="color:red"></div>
+      
     </div>
   </form>
   
   <!-- Delete Form for the 'school' table -->
   <form class="myForm" method="POST" action="../PHP/server.php" target="hide_the_response_from_php">
-    <p class="error">*All fields except answer are required</p>
+    <p class="error">*It is advisable to fill all field</p>
     <p>School Name: <br><input type="text" class="clear" id="school_name" name="school_name"></p>
     <p>School Type: <br><input type="text" class="clear" id="school_type" name="school_type"></p>
     <p>School ID: <br><input type="number" class="clear" id="school_ID" name="school_ID"></p>
@@ -126,22 +126,23 @@
     <div style="float:right;">
       <input type="number" name="registration_id" placeholder="Enter registration_id">
       <input type="submit" value="Search" name="searchForRegistration">
-      <div id="error" style="color:red"></div>
+     
     </div>
   </form>
   
   <!-- Update Form for the 'registration' table -->
   <form class="myForm" method="POST" action="../PHP/server.php" target="hide_the_response_from_php">
-    <p class="error">*All fields except answer are required</p>
+    <p class="error">*It is advisable to fill all field</p>
     <p>Registration ID: <br><input type="number" class="clear" id="registration_id" name="registration_id"></p>
     <p>Registration Date: <br><input type="date" class="clear" id="registration_date" name="registration_date"></p>
     <p>Registration Number: <br><input type="number" class="clear" id="registration_number" name="registration_number"></p>
-    <p>Course ID: <br><input type="number" class="clear" id="course_id" name="course_id"></p>
+    <p>Course ID: <br><input type="number" class="clear" id="course_id1" name="course_id"></p>
     <p>Registration Name: <br><input type="text" class="clear" id="registration_name" name="registration_name"></p>
-    <p>Student ID: <br><input type="number" class="clear" id="student_id" name="student_id"></p>
+    <p>Student ID: <br><input type="number" class="clear" id="student_id2" name="student_id"></p>
     <p>Registration Type: <br><input type="text" class="clear" id="registration_type" name="registration_type"></p>
     <input type="submit" value="Delete" name="DeleteRegistration">
   </form>
+  <div id="errormssg" style="color:red;float:right;"></div>
 <div id="success_Delete"></div>  
 </fieldset>
 </main>
