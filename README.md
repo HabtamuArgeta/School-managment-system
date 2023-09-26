@@ -21,17 +21,17 @@
 <hr/>
 
 # ADD INFORMATION 
-### 4.Add teacher
+### 4.Add teacher info
 ![image](https://github.com/HabtamuArgeta/School-managment-system/blob/master/IMAGES/2023-09-26%2017-07-11-98.png)
 
 <hr/>
 
-### 5.Add student
+### 5.Add student info
 ![image](https://github.com/HabtamuArgeta/School-managment-system/blob/master/IMAGES/2023-09-26%2017-07-53-95.png)
 
 <hr/>
 
-### 6.Add admin
+### 6.Add admin info
 ![image](https://github.com/HabtamuArgeta/School-managment-system/blob/master/IMAGES/2023-09-26%2017-08-23-97.png)
 
 <hr/>
@@ -52,4 +52,41 @@
 <hr/>
 <hr/>
 
-# UPLOAD INFORMATION
+# UPDATE INFORMATION
+### 10.Update teacher info
+![image](https://github.com/HabtamuArgeta/School-managment-system/blob/master/IMAGES/2023-09-26%2017-17-00-32.png)
+
+<hr/>
+
+### 11.Update student info
+![image](https://github.com/HabtamuArgeta/School-managment-system/blob/master/IMAGES/2023-09-26%2017-18-05-42.png)
+
+<hr/>
+
+### 12.Update course info
+![image](https://github.com/HabtamuArgeta/School-managment-system/blob/master/IMAGES/2023-09-26%2017-21-19-72.png)
+
+<hr/>
+
+### 13.Update admin info
+![image](https://github.com/HabtamuArgeta/School-managment-system/blob/master/IMAGES/2023-09-26%2017-21-38-06.png)
+
+<hr/>
+
+### 14.Update class info
+![image](https://github.com/HabtamuArgeta/School-managment-system/blob/master/IMAGES/2023-09-26%2017-22-02-71.png)
+
+<hr/>
+
+### 15.Update school info
+![image](https://github.com/HabtamuArgeta/School-managment-system/blob/master/IMAGES/2023-09-26%2017-22-33-16.png)
+
+<hr/>
+
+### 15.Update registration info
+![image](https://github.com/HabtamuArgeta/School-managment-system/blob/master/IMAGES/2023-09-26%2017-22-48-92.png)
+
+<hr/>
+<hr/>
+
+# DISPLAY INFORMATION
