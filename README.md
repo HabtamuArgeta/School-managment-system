@@ -1,4 +1,4 @@
-# School-managment-system
+# School-managment-system i develope for my client FIKADU
 
 <hr/>
 <hr/>
@@ -90,3 +90,33 @@
 <hr/>
 
 # DISPLAY INFORMATION
+### 16.Display student info
+![image](https://github.com/HabtamuArgeta/School-managment-system/blob/master/IMAGES/2023-09-26%2017-23-11-91.png)
+
+<hr/>
+
+### 17.Display course info
+![image](https://github.com/HabtamuArgeta/School-managment-system/blob/master/IMAGES/2023-09-26%2017-23-20-30.png)
+
+<hr/>
+
+### 18.Display admin info
+![image](https://github.com/HabtamuArgeta/School-managment-system/blob/master/IMAGES/2023-09-26%2017-23-33-11.png)
+
+<hr/>
+
+### 19.Display class info
+![image](https://github.com/HabtamuArgeta/School-managment-system/blob/master/IMAGES/2023-09-26%2017-23-50-09.png)
+
+<hr/>
+
+### 20.Display school info
+![image](https://github.com/HabtamuArgeta/School-managment-system/blob/master/IMAGES/2023-09-26%2017-23-57-71.png)
+
+<hr/>
+
+### 21.Display registration info
+![image](https://github.com/HabtamuArgeta/School-managment-system/blob/master/IMAGES/2023-09-26%2017-24-06-65.png)
+
+<hr/>
+<hr/>
