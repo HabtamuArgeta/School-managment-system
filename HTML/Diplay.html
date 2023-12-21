@@ -13,9 +13,13 @@
 </head>
 <body>
     <main style="display:none">
+          
         <form id="teacherForm" method="POST" action="../PHP/server.php" target="mainClass">
            <input text="submit" name="displayTeacher" value="submit">
         </form> 
+        <form id="parentForm" method="POST" action="../PHP/server.php" target="mainClass">
+          <input text="submit" name="displayParent" value="submit">
+       </form> 
         <form id="studentForm" method="POST" action="../PHP/server.php" target="mainClass">
           <input text="submit" name="displayStudent" value="submit">
        </form> 
@@ -37,36 +41,40 @@
      </main>
      <iframe style="border-width: 0;" name="mainClass" id="mainClass"></iframe>
      <aside id="left_side_bar">
-        <a onclick="display(1)"> Teacher</a>
-        <a onclick="display(2)">student</a>
-        <a onclick="display(3)">course</a>
-        <a onclick="display(4)">Administration</a>
-        <a onclick="display(5)">Class</a>
-        <a onclick="display(6)">school</a>
-        <a onclick="display(7)">Registration</a>
+       <a onclick="display(1)"> Parent</a>
+        <a onclick="display(2)"> Teacher</a>
+        <a onclick="display(3)">student</a>
+        <a onclick="display(4)">course</a>
+        <a onclick="display(5)">Administration</a>
+        <a onclick="display(6)">Class</a>
+        <a onclick="display(7)">school</a>
+        <a onclick="display(8)">Registration</a>
      </aside>
      <script>
        function display(x) {
          switch(x){
             case 1 :
-                document.getElementById('teacherForm').submit();
-              break;
+                document.getElementById('parentForm').submit();
+                break;
             case 2 :
+                document.getElementById('teacherForm').submit();
+                break;
+            case 3 :
               document.getElementById('studentForm').submit();
               break;
-              case 3 :
+              case 4 :
                 document.getElementById('coursForm').submit();
               break;
-            case 4 :
+            case 5 :
               document.getElementById('adminForm').submit();
               break;
-              case 5 :
+              case 6 :
                 document.getElementById('classForm').submit();
               break;
-            case 6 :
+            case 7 :
               document.getElementById('schoolForm').submit();
               break;
-              case 7 :
+              case 8 :
                 document.getElementById('registrationForm').submit();
               break;
          }

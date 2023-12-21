@@ -10,6 +10,24 @@
     <main id="mainClass">  
         <fieldset id="fieldset">
            <legend id="Legend"></legend>
+
+           <!-- Search Form for the 'parent' table -->
+<form class="SearchForm" method="POST" action="../PHP/server.php" target="display_to_me">
+  <div style="float:right;">
+      <input type="number" name="parent_id" placeholder="Enter parent_id">
+      <input type="submit" value="search" name="searchForParent">
+  </div>
+</form>
+
+<!-- Update form for the 'parent' table -->
+<form class="myForm" method="POST" action="../PHP/server.php" target="hide_the_response_from_php">
+  <p class="error">*It is advisable to fill all fields</p>
+  <p>Parent ID: <br><input type="number" class="clear" id="parent_id7" name="parent_id"></p>
+  <p>New Parent Name: <br><input type="text" class="clear" id="parent_name" name="parent_name"></p>
+  <input type="submit" value="Update" name="UpdateParent">
+</form>
+
+
             <!-- search Form for the 'teacher' table -->
            <form class="SearchForm" method="POST" action="../PHP/server.php" target="display_to_me">
                <div style="float:right;">
@@ -26,6 +44,7 @@
              <p>Phone_number : <br><input type="text" class="clear" id="phone_number" name="phone_number"></p>
              <p>Age : <br><input type="number" class="clear" id="age" name="age"></p>
              <p>Teacher_address : <br><input type="text" class="clear" id="teacher_address" name="teacher_address"></p>
+             <p>Admin Id : <br><input type="number" class="clear" id="admin_id" name="admin_id"></p>
              <input type="submit" value="Update" name="UpdateTeacher">    
          </form>
 
@@ -41,11 +60,15 @@
   <!-- Update form for the 'student' table -->
   <form class="myForm" method="POST" action="../PHP/server.php" target="hide_the_response_from_php">
     <p class="error">*It is advisable to fill all field</p>
-    <p>Student ID: <br><input type="number" class="clear" id="student_id" name="student_id"></p>
+    <p>Student ID: <br><input type="number" class="clear" id="student_id1" name="student_id"></p>
     <p>Student Name: <br><input type="text" class="clear" id="student_name" name="student_name"></p>
     <p>Student Address: <br><input type="text" class="clear" id="student_address" name="student_address"></p>
     <p>Student Email: <br><input type="text" class="clear" id="student_email" name="student_email"></p>
     <p>Phone Number: <br><input type="text" class="clear" id="phone_number1" name="phone_number"></p>
+    <p>School ID: <br><input type="number" class="clear" id="school_id1" name="school_id"></p>
+    <p>Parent ID: <br><input type="number" class="clear" id="parent_id1" name="parent_id"></p>
+    <p>Admin ID: <br><input type="number" class="clear" id="admin_id1" name="admin_id"></p>
+
     <input type="submit" value="Update" name="UpdateStudent">
   </form>
 
@@ -57,15 +80,19 @@
      
     </div>
   </form>
-  
+ 
+
   <!-- Update form for the 'course' table -->
   <form class="myForm" method="POST" action="../PHP/server.php" target="hide_the_response_from_php">
     <p class="error">*It is advisable to fill all field</p>
-    <p>Course ID: <br><input type="number" class="clear" id="course_id" name="course_id"></p>
+    <p>Course ID: <br><input type="number" class="clear" id="course_id2" name="course_id"></p>
     <p>Course Name: <br><input type="text" class="clear" id="course_name" name="course_name"></p>
-    <p>Student ID: <br><input type="number" class="clear" id="student_id4" name="student_id"></p>
+    <p>Student ID: <br><input type="number" class="clear" id="student_id2" name="student_id"></p>
     <p>Class ID: <br><input type="number" class="clear" id="class_id2" name="class_id"></p>
     <p>Course Type: <br><input type="text" class="clear" id="course_type" name="course_type"></p>
+    <p>Teacher ID: <br><input type="number" class="clear" id="teacher_id2" name="teacher_id"></p>
+    <p>Admin ID: <br><input type="number" class="clear" id="admin_id2" name="admin_id"></p>
+
     <input type="submit" value="Update" name="UpdateCourse">
   </form>
 <!-- Search Form for the 'administration' table -->
@@ -80,7 +107,7 @@
   <!-- Update Form for the 'administration' table -->
   <form class="myForm" method="POST" action="../PHP/server.php" target="hide_the_response_from_php">
     <p class="error">*It is advisable to fill all field</p>
-    <p>Admin ID: <br><input type="number" class="clear" id="admin_id" name="admin_id"></p>
+    <p>Admin ID: <br><input type="number" class="clear" id="admin_id3" name="admin_id"></p>
     <p>Admin Name: <br><input type="text" class="clear" id="admin_name" name="admin_name"></p>
     <p>Admin Address: <br><input type="text" class="clear" id="admin_address" name="admin_address"></p>
     <input type="submit" value="Update" name="UpdateAdministration">
@@ -97,10 +124,12 @@
   <!-- Update Form for the 'class' table -->
   <form class="myForm" method="POST" action="../PHP/server.php" target="hide_the_response_from_php">
     <p class="error">*It is advisable to fill all field</p>
-    <p>Class ID: <br><input type="number" class="clear" id="class_id" name="class_id"></p>
+    <p>Class ID: <br><input type="number" class="clear" id="class_id4" name="class_id"></p>
     <p>Class Type: <br><input type="text" class="clear" id="class_type" name="class_type"></p>
-    <p>Student ID: <br><input type="number" class="clear" id="student_id1" name="student_id"></p>
+    <p>Student ID: <br><input type="number" class="clear" id="student_id4" name="student_id"></p>
     <p>Class Name: <br><input type="text" class="clear" id="class_name" name="class_name"></p>
+    <p>School ID: <br><input type="number" class="clear" id="school_id4" name="school_id"></p>
+
     <input type="submit" value="Update" name="UpdateClass">
   </form>
   <!-- Search Form for the 'school' table -->
@@ -117,7 +146,7 @@
     <p class="error">*It is advisable to fill all field</p>
     <p>School Name: <br><input type="text" class="clear" id="school_name" name="school_name"></p>
     <p>School Type: <br><input type="text" class="clear" id="school_type" name="school_type"></p>
-    <p>School ID: <br><input type="number" class="clear" readonly id="school_ID" name="school_ID"></p>
+    <p>School ID: <br><input type="number" class="clear" readonly id="school_ID5" name="school_ID"></p>
     <input type="submit" value="Update" name="UpdateSchool">
   </form>
   
@@ -133,12 +162,12 @@
   <!-- Update Form for the 'registration' table -->
   <form class="myForm" method="POST" action="../PHP/server.php" target="hide_the_response_from_php">
     <p class="error">*It is advisable to fill all field</p>
-    <p>Registration ID: <br><input type="number" class="clear" id="registration_id" name="registration_id"></p>
+    <p>Registration ID: <br><input type="number" class="clear" id="registration_id6" name="registration_id"></p>
     <p>Registration Date: <br><input type="date" class="clear" id="registration_date" name="registration_date"></p>
     <p>Registration Number: <br><input type="number" class="clear" id="registration_number" name="registration_number"></p>
-    <p>Course ID: <br><input type="number" class="clear" id="course_id1" name="course_id"></p>
+    <p>Course ID: <br><input type="number" class="clear" id="course_id6" name="course_id"></p>
     <p>Registration Name: <br><input type="text" class="clear" id="registration_name" name="registration_name"></p>
-    <p>Student ID: <br><input type="number" class="clear" id="student_id2" name="student_id"></p>
+    <p>Student ID: <br><input type="number" class="clear" id="student_id6" name="student_id"></p>
     <p>Registration Type: <br><input type="text" class="clear" id="registration_type" name="registration_type"></p>
     <input type="submit" value="Update" name="UpdateRegistration">
   </form>
@@ -150,13 +179,14 @@
      <iframe id="myFrame" name="hide_the_response_from_php" style="display: none;"></iframe>
       <iframe name="display_to_me" style="display: none;"></iframe>
       <aside id="left_side_bar">
-        <a onclick="showForm('teacher',1)"> Teacher</a>
-        <a onclick="showForm('student',2)">student</a>
-        <a onclick="showForm('course',3)">course</a>
-        <a onclick="showForm('administration',4)">Administration</a>
-        <a onclick="showForm('class',5)">Class</a>
-        <a onclick="showForm('school',6)">school</a>
-        <a onclick="showForm('registration',7)">Registration</a>
+        <a onclick="showForm('parent',1)"> Parent</a>
+        <a onclick="showForm('teacher',2)"> Teacher</a>
+        <a onclick="showForm('student',3)">student</a>
+        <a onclick="showForm('course',4)">course</a>
+        <a onclick="showForm('administration',5)">Administration</a>
+        <a onclick="showForm('class',6)">Class</a>
+        <a onclick="showForm('school',7)">school</a>
+        <a onclick="showForm('registration',8)">Registration</a>
      </aside>
 
       <script src="../JS/UpdatePageManager.js"> </script>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 23, 2023 at 05:45 AM
+-- Generation Time: Dec 21, 2023 at 10:19 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -43,7 +43,8 @@ CREATE TABLE `class` (
   `class_id` int(11) NOT NULL,
   `class_type` varchar(20) DEFAULT NULL,
   `student_id` int(11) DEFAULT NULL,
-  `class_name` varchar(50) DEFAULT NULL
+  `class_name` varchar(50) DEFAULT NULL,
+  `school_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -57,7 +58,20 @@ CREATE TABLE `course` (
   `course_name` varchar(50) DEFAULT NULL,
   `student_id` int(11) DEFAULT NULL,
   `class_id` int(11) DEFAULT NULL,
-  `course_type` varchar(20) DEFAULT NULL
+  `course_type` varchar(20) DEFAULT NULL,
+  `teacher_id` int(11) DEFAULT NULL,
+  `admin_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `parent`
+--
+
+CREATE TABLE `parent` (
+  `parent_id` int(11) NOT NULL,
+  `parent_name` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -85,7 +99,8 @@ CREATE TABLE `registration` (
 CREATE TABLE `school` (
   `school_name` varchar(255) DEFAULT NULL,
   `school_type` varchar(255) DEFAULT NULL,
-  `school_ID` int(11) NOT NULL
+  `school_ID` int(11) NOT NULL,
+  `admin_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -99,16 +114,11 @@ CREATE TABLE `student` (
   `student_name` varchar(50) DEFAULT NULL,
   `student_address` varchar(100) DEFAULT NULL,
   `student_email` varchar(50) DEFAULT NULL,
-  `phone_number` varchar(20) DEFAULT NULL
+  `phone_number` varchar(20) DEFAULT NULL,
+  `school_id` int(11) DEFAULT NULL,
+  `parent_id` int(11) DEFAULT NULL,
+  `admin_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `student`
---
-
-INSERT INTO `student` (`student_id`, `student_name`, `student_address`, `student_email`, `phone_number`) VALUES
-(1, 'habtamu ', 'adis', 'argetahabtamu8@gmail.com', '0901010101'),
-(2, 'habtamu ', 'Addis Ababa', 'argetahabtamu8@gmail.com', '0901010101');
 
 -- --------------------------------------------------------
 
@@ -121,7 +131,8 @@ CREATE TABLE `teacher` (
   `teacher_name` varchar(50) DEFAULT NULL,
   `phone_number` varchar(20) DEFAULT NULL,
   `age` int(11) DEFAULT NULL,
-  `teacher_address` varchar(100) DEFAULT NULL
+  `teacher_address` varchar(100) DEFAULT NULL,
+  `admin_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -139,7 +150,8 @@ ALTER TABLE `administration`
 --
 ALTER TABLE `class`
   ADD PRIMARY KEY (`class_id`),
-  ADD KEY `student_id` (`student_id`);
+  ADD KEY `student_id` (`student_id`),
+  ADD KEY `fk_school` (`school_id`);
 
 --
 -- Indexes for table `course`
@@ -147,7 +159,15 @@ ALTER TABLE `class`
 ALTER TABLE `course`
   ADD PRIMARY KEY (`course_id`),
   ADD KEY `student_id` (`student_id`),
-  ADD KEY `class_id` (`class_id`);
+  ADD KEY `class_id` (`class_id`),
+  ADD KEY `fk_course_teacher` (`teacher_id`),
+  ADD KEY `fk_course_admin` (`admin_id`);
+
+--
+-- Indexes for table `parent`
+--
+ALTER TABLE `parent`
+  ADD PRIMARY KEY (`parent_id`);
 
 --
 -- Indexes for table `registration`
@@ -161,29 +181,24 @@ ALTER TABLE `registration`
 -- Indexes for table `school`
 --
 ALTER TABLE `school`
-  ADD PRIMARY KEY (`school_ID`);
+  ADD PRIMARY KEY (`school_ID`),
+  ADD KEY `fk_admin_school` (`admin_id`);
 
 --
 -- Indexes for table `student`
 --
 ALTER TABLE `student`
-  ADD PRIMARY KEY (`student_id`);
+  ADD PRIMARY KEY (`student_id`),
+  ADD KEY `fk_student_school` (`school_id`),
+  ADD KEY `fk_student_parent` (`parent_id`),
+  ADD KEY `fk_student_admin` (`admin_id`);
 
 --
 -- Indexes for table `teacher`
 --
 ALTER TABLE `teacher`
-  ADD PRIMARY KEY (`teacher_id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `school`
---
-ALTER TABLE `school`
-  MODIFY `school_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  ADD PRIMARY KEY (`teacher_id`),
+  ADD KEY `fk_admin` (`admin_id`);
 
 --
 -- Constraints for dumped tables
@@ -193,14 +208,17 @@ ALTER TABLE `school`
 -- Constraints for table `class`
 --
 ALTER TABLE `class`
-  ADD CONSTRAINT `class_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `student` (`student_id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `class_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `student` (`student_id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_school` FOREIGN KEY (`school_id`) REFERENCES `school` (`school_ID`);
 
 --
 -- Constraints for table `course`
 --
 ALTER TABLE `course`
   ADD CONSTRAINT `course_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `student` (`student_id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `course_ibfk_2` FOREIGN KEY (`class_id`) REFERENCES `class` (`class_id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `course_ibfk_2` FOREIGN KEY (`class_id`) REFERENCES `class` (`class_id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_course_admin` FOREIGN KEY (`admin_id`) REFERENCES `administration` (`admin_id`),
+  ADD CONSTRAINT `fk_course_teacher` FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`teacher_id`);
 
 --
 -- Constraints for table `registration`
@@ -208,6 +226,26 @@ ALTER TABLE `course`
 ALTER TABLE `registration`
   ADD CONSTRAINT `registration_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `course` (`course_id`) ON DELETE CASCADE,
   ADD CONSTRAINT `registration_ibfk_2` FOREIGN KEY (`student_id`) REFERENCES `student` (`student_id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `school`
+--
+ALTER TABLE `school`
+  ADD CONSTRAINT `fk_admin_school` FOREIGN KEY (`admin_id`) REFERENCES `administration` (`admin_id`);
+
+--
+-- Constraints for table `student`
+--
+ALTER TABLE `student`
+  ADD CONSTRAINT `fk_student_admin` FOREIGN KEY (`admin_id`) REFERENCES `administration` (`admin_id`),
+  ADD CONSTRAINT `fk_student_parent` FOREIGN KEY (`parent_id`) REFERENCES `parent` (`parent_id`),
+  ADD CONSTRAINT `fk_student_school` FOREIGN KEY (`school_id`) REFERENCES `school` (`school_ID`);
+
+--
+-- Constraints for table `teacher`
+--
+ALTER TABLE `teacher`
+  ADD CONSTRAINT `fk_admin` FOREIGN KEY (`admin_id`) REFERENCES `administration` (`admin_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

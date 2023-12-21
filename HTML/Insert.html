@@ -12,6 +12,15 @@
       <main id="mainClass">  
          <fieldset id="fieldset">
             <legend id="Legend"></legend>
+
+            <!-- Form for inserting data into the 'parent' table -->
+<form class="myForm" method="POST" action="../PHP/server.php" target="hide_the_response_from_php">
+  <p class="error">*It is advisable to fill all fields</p>
+  <p>Parent ID: <br><input type="number" class="clear" name="parent_id"></p>
+  <p>Parent Name: <br><input type="text" class="clear" name="parent_name"></p>
+  <input type="submit" value="Insert" name="addParent">
+</form>
+
             <!-- Form for inserting data into the 'teacher' table -->
 <form class="myForm" method="POST" action="../PHP/server.php" target="hide_the_response_from_php">
    <p class="error">*It is advisable to fill all field</p>
@@ -20,6 +29,7 @@
    <p>Phone Number: <br><input type="text" class="clear" name="phone_number"></p>
    <p>Age: <br><input type="number" class="clear" name="age"></p>
    <p>Teacher Address: <br><input type="text" class="clear" name="teacher_address"></p>
+   <p>Admin ID: <br><input type="text" class="clear" name="admin_id"></p>
    <input type="submit" value="Insert" name="addTeacher">
  </form>
  
@@ -31,6 +41,9 @@
    <p>Student Address: <br><input type="text" class="clear" name="student_address"></p>
    <p>Student Email: <br><input type="email" class="clear" name="student_email"></p>
    <p>Phone Number: <br><input type="text" class="clear" name="phone_number"></p>
+   <p>Parent ID: <br><input type="number" class="clear" name="parent_id"></p>
+   <p>Admin ID: <br><input type="number" class="clear" name="admin_id"></p>
+   <p>School ID: <br><input type="number" class="clear" name="school_id"></p>
    <input type="submit" value="Insert" name="addStudent">
  </form>
  
@@ -42,6 +55,8 @@
    <p>Student ID: <br><input type="number" class="clear" name="student_id"></p>
    <p>Class ID: <br><input type="number" class="clear" name="class_id"></p>
    <p>Course Type: <br><input type="text" class="clear" name="course_type"></p>
+   <p>Admin ID: <br><input type="number" class="clear" name="admin_id"></p>
+   <p>Teacher ID: <br><input type="number" class="clear" name="teacher_id"></p>
    <input type="submit" value="Insert" name="addCourse">
  </form>
  
@@ -60,10 +75,12 @@
    <p>Class Type: <br><input type="text" class="clear" name="class_type"></p>
    <p>Student ID: <br><input type="number" class="clear" name="student_id"></p>
    <p>Class Name: <br><input type="text" class="clear" name="class_name"></p>
+   <p>School ID: <br><input type="number" class="clear" name="school_id"></p>
    <input type="submit" value="Insert" name="addClass">
  </form>
   <!-- Form for inserting data into the 'school' table -->
   <form class="myForm" method="POST" action="../PHP/server.php" target="hide_the_response_from_php">
+    <p>School ID: <br><input type="number" class="clear" name="school_id"></p>
     <p class="error">*It is advisable to fill all field</p>
     <p>School Name: <br><input type="text" class="clear" name="school_name"></p>
    <p>School Type: <br><input type="text" class="clear" name="school_type"></p>
@@ -89,13 +106,14 @@
       <iframe id="myFrame" name="hide_the_response_from_php" style="display: none;"></iframe>
 
          <aside id="left_side_bar">
-           <a onclick="showForm('teacher',1)"> Teacher</a>
-           <a onclick="showForm('student',2)">student</a>
-           <a onclick="showForm('course',3)">course</a>
-           <a onclick="showForm('administration',4)">Administration</a>
-           <a onclick="showForm('class',5)">Class</a>
-           <a onclick="showForm('school',6)">school</a>
-           <a onclick="showForm('registration',7)">Registration</a>
+           <a onclick="showForm('parent',1)"> Parent</a>
+           <a onclick="showForm('teacher',2)"> Teacher</a>
+           <a onclick="showForm('student',3)">student</a>
+           <a onclick="showForm('course',4)">course</a>
+           <a onclick="showForm('administration',5)">Administration</a>
+           <a onclick="showForm('class',6)">Class</a>
+           <a onclick="showForm('school',7)">school</a>
+           <a onclick="showForm('registration',8)">Registration</a>
         </aside>
 
         <script src="../JS/InsertPageManegr.js"> </script>
